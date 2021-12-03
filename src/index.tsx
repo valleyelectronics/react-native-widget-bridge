@@ -7,7 +7,7 @@ type WidgetBridgeType = {
   setDict(key: string, value: object): Promise<boolean>;
   getDict(key: string): Promise<object>;
   setString(key: string, value: string): Promise<boolean>;
-  getString(key: string): Promise<object>;
+  getString(key: string): Promise<string>;
   removeObject(key: string): Promise<object>;
   reloadWidget(kind: string): Promise<object>;
 };
