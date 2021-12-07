@@ -1,4 +1,4 @@
-import { NativeModules } from 'react-native';
+import { NativeModules } from "react-native";
 
 type WidgetBridgeType = {
   multiply(a: number, b: number): Promise<number>;
@@ -8,8 +8,9 @@ type WidgetBridgeType = {
   getDict(key: string): Promise<object>;
   setString(key: string, value: string): Promise<boolean>;
   getString(key: string): Promise<string>;
-  removeObject(key: string): Promise<object>;
-  reloadWidget(kind: string): Promise<object>;
+  removeObject(key: string): Promise<boolean>;
+  reloadWidget(kind: string): Promise<boolean>;
+  reloadAllWidgets(): Promise<boolean>;
 };
 
 const { WidgetBridge } = NativeModules;
