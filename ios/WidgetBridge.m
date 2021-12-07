@@ -64,4 +64,9 @@ RCT_EXTERN_METHOD(
                   withRejecter:(RCTPromiseRejectBlock)reject
                   )
 
++ (BOOL)requiresMainQueueSetup
+{
+  return NO;
+}
+
 @end
