@@ -19,24 +19,36 @@ import WidgetBridge from "react-native-widget-bridge";
 const result = await WidgetBridge.multiply(3, 7);
 
 // Always ensure that suite was ready to read/write before interact with it
-const success: Bool = await WidgetBridge.ensureUserDefaultsSuit("group.my.exampe.com");
+const success: Bool = await WidgetBridge.ensureUserDefaultsSuit(
+  "group.my.exampe.com"
+);
 
 // If suite has been ready, write to UserDefaults suite
-const success: Bool = await WidgetBridge.setDict("MyDictA", {a: 1, b:2, foo: "bar"});
+const success: Bool = await WidgetBridge.setDict("MyDictA", {
+  a: 1,
+  b: 2,
+  foo: "bar",
+});
 const dict: object = await WidgetBridge.getDict("MyDictA");
 const success: Bool = await WidgetBridge.removeObject("MyDictA");
 
-const success: Bool = await WidgetBridge.setString("MyStringB", "This is a test string");
+const success: Bool = await WidgetBridge.setString(
+  "MyStringB",
+  "This is a test string"
+);
 const str: String = await WidgetBridge.getString("MyStringB");
 const success: Bool = await WidgetBridge.removeObject("MyStringB");
 
-
 // Reload widget timeline after your's UserDefaults data was changed
-const myWidgetKind = "my_widget"
-WidgetBridge.reloadWidget(myWidgetKind)
+const myWidgetKind = "my_widget";
+WidgetBridge.reloadWidget(myWidgetKind);
+
+// You can also reload all widgets
+WidgetBridge.reloadAllWidgets();
 ```
 
 You can get the `myWidgetKind` by looking into your widget entry file:
+
 ```swift
 @main
 struct my_widget: Widget {
