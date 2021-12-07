@@ -59,4 +59,9 @@ RCT_EXTERN_METHOD(
                   withRejecter:(RCTPromiseRejectBlock)reject
                   )
 
+RCT_EXTERN_METHOD(
+                  reloadAllWidgets: (RCTPromiseResolveBlock *)resolve
+                  withRejecter:(RCTPromiseRejectBlock)reject
+                  )
+
 @end
